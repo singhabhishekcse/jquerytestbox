@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #container1{
+            display: flex;
+        }
+        #container2{
+            display: flex;
+        }
+        #container3{
+            display: flex;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="container1">
+        <div class="box" id="1"  style=" width: 5%; height: 60px;"></div>
+        <div class="whitebox" id="2" style=" width: 5%; height: 60px;"></div>
+        <div class="box" id="3" style=" width: 5%; height: 60px;"></div>
+    </div>
+    <div id="container2">
+        <div class="whitebox" id="4" style=" width: 5%; height: 60px; "></div>
+        <div class="box" id="5" style=" width: 5%; height: 60px; "></div>
+        <div class="whitebox" id="6" style=" width: 5%; height: 60px; "></div>
+    </div>
+    <div id="container3">
+        <div class="box" id="7" style=" width: 5%; height: 60px;"></div>
+        <div class="whitebox" id="8" style=" width: 5%; height: 60px;"></div>
+        <div class="box" id="9" style=" width: 5%; height: 60px;"></div>
+    </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('.box').on("click",function(){
+                 let boxValue = $(this).attr("id");
+                 switch(boxValue){
+                    case '1':  $(this).toggleClass( "box" );
+                               let  boxVal12 = $("#2").attr("class")
+                               let  boxVa14 = $("#4").attr("class")
+                                 if(boxVal12 == 'box' && boxVa14 == 'box'){
+                                    $("#2").attr('class','');
+                                    $("#4").attr('class','');
+                                 }else{
+                                    $("#2").attr('class','box');
+                                    $("#4").attr('class','box');
+                                 }
+                                 break;
+                    case '3':  $(this).toggleClass( "box" );
+                               let  boxVal32 = $("#2").attr("class")
+                               let  boxVa36 = $("#6").attr("class")
+                                 if(boxVal32 == 'box' && boxVa36 == 'box'){
+                                    $("#2").attr('class','');
+                                    $("#6").attr('class','');
+                                 }else{
+                                    $("#2").attr('class','box');
+                                    $("#6").attr('class','box');
+                                 }
+                                 break;
+                    case '5':    $(this).toggleClass( "box" );
+                               let  boxVal52 = $("#2").attr("class")
+                               let  boxVal54 = $("#4").attr("class")
+                               let  boxVal56 = $("#6").attr("class")
+                               let  boxVal58 = $("#8").attr("class")
+                                 if(boxVal52 == 'box' && boxVal54 == 'box' && boxVal56 == 'box' && boxVal58 == 'box' ){
+                                    $("#2").attr('class','');
+                                    $("#4").attr('class','');
+                                    $("#6").attr('class','');
+                                    $("#8").attr('class','');
+                                 }else{
+                                    $("#2").attr('class','box');
+                                    $("#4").attr('class','box');
+                                    $("#6").attr('class','box');
+                                    $("#8").attr('class','box');
+                                 }
+                                 break;
+                    case '7':    $(this).toggleClass( "box" );
+                               let  boxVal74 = $("#4").attr("class")
+                               let  boxVal78 = $("#8").attr("class")
+                                 if(boxVal74 == 'box' && boxVal78 == 'box' ){
+                                    $("#4").attr('class','');                                
+                                    $("#8").attr('class','');
+                                 }else{
+                                    $("#4").attr('class','box');
+                                    $("#8").attr('class','box');
+                                 }
+                                 break;
+                    case '9':    $(this).toggleClass( "box" ); 
+                               let  boxVal96 = $("#6").attr("class")
+                               let  boxVal98 = $("#8").attr("class")
+                                 if(boxVal96 == 'box' && boxVal98 == 'box' ){
+                                    $("#6").attr('class','');                                
+                                    $("#8").attr('class','');
+                                 }else{
+                                    $("#6").attr('class','box');
+                                    $("#8").attr('class','box');
+                                 }
+                                 break;
+                 }                  
+            });
+            $('.whitebox').on("click",function(){
+                 let boxValue1 = $(this).attr("id");
+                 //console.log(boxValue1);
+                 switch(boxValue1){
+                     case '2':  $(this).toggleClass("box")
+                                 let  boxVal21 = $("#1").attr("class")
+                                 let  boxVal23 = $("#3").attr("class")
+                                 let  boxVal25 = $("#5").attr("class")
+                                 if(boxVal21 == 'box' && boxVal23 == 'box' && boxVal25 == 'box'){
+                                    $("#1").attr('class','whitebox');
+                                    $("#3").attr('class','whitebox');
+                                    $("#5").attr('class','whitebox');
+                                 }else{
+                                    $("#1").attr('class','box');
+                                    $("#3").attr('class','box');
+                                    $("#5").attr('class','box');
+                                 }
+                                 break;
+                     case '4':  $(this).toggleClass("box")
+                                 let  boxVal41 = $("#1").attr("class")
+                                 let  boxVal45 = $("#5").attr("class")
+                                 let  boxVal47 = $("#7").attr("class")
+                                 if(boxVal41 == 'box' && boxVal45 == 'box' && boxVal47 == 'box'){
+                                    $("#1").attr('class','whitebox');
+                                    $("#5").attr('class','whitebox');
+                                    $("#7").attr('class','whitebox');
+                                 }else{
+                                    $("#1").attr('class','box');
+                                    $("#5").attr('class','box');
+                                    $("#7").attr('class','box');
+                                 }
+                                 break;  
+                     case '6':   $(this).toggleClass("box")
+                                 let  boxVal63 = $("#3").attr("class")
+                                 let  boxVal65 = $("#5").attr("class")
+                                 let  boxVal69 = $("#9").attr("class")
+                                 if(boxVal63 == 'box' && boxVal65 == 'box' && boxVal69 == 'box'){
+                                    $("#3").attr('class','whitebox');
+                                    $("#5").attr('class','whitebox');
+                                    $("#9").attr('class','whitebox');
+                                 }else{
+                                    $("#3").attr('class','box');
+                                    $("#5").attr('class','box');
+                                    $("#9").attr('class','box');
+                                 }
+                                 break;                              
+                     case '8':   $(this).toggleClass("box")
+                                 let  boxVal85 = $("#5").attr("class")
+                                 let  boxVal87 = $("#7").attr("class")
+                                 let  boxVal89 = $("#9").attr("class")
+                                 if(boxVal85 == 'box' && boxVal87 == 'box' && boxVal89 == 'box'){
+                                    $("#5").attr('class','whitebox');
+                                    $("#7").attr('class','whitebox');
+                                    $("#9").attr('class','whitebox');
+                                 }else{
+                                    $("#5").attr('class','box');
+                                    $("#7").attr('class','box');
+                                    $("#9").attr('class','box');
+                                 }
+                                 break;                 
+
+                 }
+
+            })
+        })
+           
+    </script>
+</body>
+</html>
